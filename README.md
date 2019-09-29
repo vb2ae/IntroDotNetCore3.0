@@ -45,11 +45,45 @@ When creating a console application if you want to use async in the main functio
 ```cs
         static async Task Main(string[] args)
         {
-
-
             await foreach (var location in GetISSLocationSequence())
             {
                 Console.WriteLine(location);
             }
         }
+```
+
+
+# Default interface members
+
+You can now add default implementions for functions in Interfaces in c# 8.   This is similar to Abstract Classes.  I would probably only use this for simple calulations that wont get an error.
+
+Here is a simple example which adds to properties to a IRoom interface.  I also added a function which multiplies the length by width to get the Square feet of the room
+
+```cs
+    public interface IRoom
+    {
+        public double length { get; set; }
+
+        public double width { get; set; }
+
+        public double SquareFeet { get => length * width; }
+    }
+```
+
+Here is a class which implements the interface.
+
+```cs
+    public class LivingRoom : IRoom
+    {
+        public double length { get; set; }
+        public double width { get; set; }
+    }
+```
+
+You can see when using the class you have access to the SquareFeet propery
+
+```cs
+            IRoom livingRoom = new LivingRoom { length = 12, width = 10 }; 
+
+            Console.WriteLine($"Square feet in living room {livingRoom.SquareFeet}");
 ```
