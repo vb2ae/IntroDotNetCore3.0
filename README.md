@@ -83,7 +83,28 @@ Here is a class which implements the interface.
 You can see when using the class you have access to the SquareFeet propery
 
 ```cs
-            IRoom livingRoom = new LivingRoom { length = 12, width = 10 }; 
+   IRoom livingRoom = new LivingRoom { length = 12, width = 10 }; 
 
-            Console.WriteLine($"Square feet in living room {livingRoom.SquareFeet}");
+   Console.WriteLine($"Square feet in living room {livingRoom.SquareFeet}");
 ```
+
+# Pattern Matching
+
+There is also some changes in pattern matching.  You can now match pattern with enum, tuples, properties in classes, etc..
+
+An example of matching a property in a class you can see below
+
+
+```cs
+            string size = livingRoom switch
+            {
+                { width: 12 } => size = "Perfect dozen width",
+                { length: 12 } => size = "Perfect dozen length",
+                _ => size = "Not a perfect dozen size"
+            };
+```
+
+You put the property names in { } with a : to the expected value.  {PropertyName: Value}.   Use this _ for else.
+
+
+
