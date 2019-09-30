@@ -107,4 +107,23 @@ An example of matching a property in a class you can see below
 You put the property names in { } with a : to the expected value.  {PropertyName: Value}.   Use this _ for else.
 
 
+# Nullable reference types
+
+One new feature in C# 8 is Nullable reference types.   Once this is turned you will get warning telling you about possible places you could get a null reference exceptions
+
+To turn it on for the whole project by editing the project file and adding 2 lines into the PropertyGroup
+
+```xml
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enabled</Nullable>
+  </PropertyGroup>
+```
+
+The other way to do if you only want to do it for one file is by adding the line to top of cs file.  Make sure you are using C# 8 before doing so
+
+```cs
+#nullable enable
+
+namespace NullableDemo
+```
 
