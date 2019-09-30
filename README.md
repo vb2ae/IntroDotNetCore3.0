@@ -119,7 +119,7 @@ To turn it on for the whole project by editing the project file and adding 2 lin
   </PropertyGroup>
 ```
 
-The other way to do if you only want to do it for one file is by adding the line to top of cs file.  Make sure you are using C# 8 before doing so
+The other way to do if you only want to do it for one file is by adding the line to top of cs file.  Make sure you are using C# 8 before doing so.  The main reason to do by file is this project was migrated to .Net Core 3.0 and you would need to make a lot of changes at once.
 
 ```cs
 #nullable enable
