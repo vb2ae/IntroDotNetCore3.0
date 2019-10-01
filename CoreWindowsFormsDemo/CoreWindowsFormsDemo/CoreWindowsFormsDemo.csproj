@@ -4,6 +4,12 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <RuntimeIdentifier>win10-x86</RuntimeIdentifier>
+    <PublishSingleFile>false</PublishSingleFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="3.0.0" />
+  </ItemGroup>
 
 </Project>
