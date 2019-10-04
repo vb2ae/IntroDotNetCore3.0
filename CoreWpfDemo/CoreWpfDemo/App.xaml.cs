@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CoreWpfDemo.Services;
+using CoreWpfDemo.View_Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +15,10 @@ namespace CoreWpfDemo
     /// </summary>
     public partial class App : Application
     {
+
+        public App()
+        {
+        }
+
     }
 }

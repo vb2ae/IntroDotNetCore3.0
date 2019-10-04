@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CoreWpfDemo.Services;
+using CoreWpfDemo.View_Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,8 @@ namespace CoreWpfDemo
         public MainWindow()
         {
             InitializeComponent();
+            MainViewModel main = new MainViewModel(new LaunchDataService());
+            this.DataContext = main;
         }
     }
 }

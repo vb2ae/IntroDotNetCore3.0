@@ -7,6 +7,29 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock Text="Hello World"></TextBlock>
+        <ListView ItemsSource="{Binding Launches}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel>
+                                <Image Source="{Binding SmallImage}"></Image>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="24" ></TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Start of launch window : " FontSize="24"></TextBlock>
+                                    <TextBlock Text="{Binding StartOfLaunchWindow}" FontSize="24" ></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Launch location : " FontSize="24"></TextBlock>
+                                    <TextBlock Text="{Binding LaunchLocation}" FontSize="24" ></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>
